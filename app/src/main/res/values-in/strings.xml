@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pengguna Github</string>
+
+    <string name="item_user_text_following">Mengikuti</string>
+    <string name="item_user_text_follower">Pengikut</string>
+    <string name="item_user_text_repository">Penyimpanan</string>
+
+    <string name="main_item_settings">Pengaturan</string>
+    <string name="main_item_notifications">Notification</string>
+
+    <string name="main_search_username">Cari username disini</string>
+
+    <string name="follower_list_text_no_data">Tidak ada data</string>
+    <string name="detail_text_no_location">Tidak ada data lokasi</string>
+    <string name="detail_text_no_company">Tidak ada data perusahaan</string>
+</resources>

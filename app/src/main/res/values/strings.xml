@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">Github User\'s</string>
+
+    <string name="item_user_text_following">Following</string>
+    <string name="item_user_text_follower">Follower</string>
+    <string name="item_user_text_repository">Repository</string>
+
+    <string name="main_item_settings">Settings</string>
+    <string name="main_item_notifications">Notification</string>
+
+    <string name="main_search_username">Search username here</string>
+
+    <string name="follower_list_text_no_data">No data</string>
+    <string name="detail_text_no_location">No location data</string>
+    <string name="detail_text_no_company">No company data</string>
+
+</resources>
