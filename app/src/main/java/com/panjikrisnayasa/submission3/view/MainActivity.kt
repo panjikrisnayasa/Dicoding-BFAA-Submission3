@@ -80,13 +80,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_main_settings -> {
-                val settingsIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
-                startActivity(settingsIntent)
+            R.id.menu_main_favorite -> {
+                val favoriteIntent = Intent(this, FavoriteActivity::class.java)
+                startActivity(favoriteIntent)
             }
             R.id.menu_main_notifications -> {
                 val notificationsIntent = Intent(this, NotificationsActivity::class.java)
                 startActivity(notificationsIntent)
+            }
+            R.id.menu_main_settings -> {
+                val settingsIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+                startActivity(settingsIntent)
             }
         }
         return super.onOptionsItemSelected(item)

@@ -9,10 +9,19 @@
 
     <string name="main_item_settings">Pengaturan</string>
     <string name="main_item_notifications">Notification</string>
+    <string name="main_item_favorite">Favorit</string>
 
     <string name="main_search_username">Cari username disini</string>
 
     <string name="follower_list_text_no_data">Tidak ada data</string>
+
     <string name="detail_text_no_location">Tidak ada data lokasi</string>
     <string name="detail_text_no_company">Tidak ada data perusahaan</string>
+    <string name="detail_snackbar_deleted_favorite">Dihapus dari Pengguna Favorit</string>
+    <string name="detail_snackbar_added_favorite">Ditambah ke Pengguna Favorit</string>
+
+    <string name="favorite_text_title">Pengguna Favorit</string>
+
+    <string name="notifications_text_title">Notifikasi</string>
+
 </resources>

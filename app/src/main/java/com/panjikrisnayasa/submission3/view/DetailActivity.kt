@@ -7,13 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.panjikrisnayasa.submission3.R
 import com.panjikrisnayasa.submission3.adapter.FollowerFollowingAdapter
 import com.panjikrisnayasa.submission3.model.User
 import com.panjikrisnayasa.submission3.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.activity_detail.*
 
-class DetailActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
         const val EXTRA_USER = "user"
@@ -21,6 +22,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private lateinit var mViewModel: DetailViewModel
+    private var mIsFavored = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +34,8 @@ class DetailActivity : AppCompatActivity() {
             this,
             ViewModelProvider.NewInstanceFactory()
         ).get(DetailViewModel::class.java)
+
+        floating_detail_favorite.setOnClickListener(this)
 
         showLoading(true)
 
@@ -105,5 +109,21 @@ class DetailActivity : AppCompatActivity() {
                 FollowingListFragment()
             )
         tab_detail_follower_following.setupWithViewPager(view_pager_detail_follower_following)
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.floating_detail_favorite -> {
+                mIsFavored = if (mIsFavored) {
+                    Snackbar.make(v, getString(R.string.detail_snackbar_deleted_favorite), Snackbar.LENGTH_SHORT).show()
+                    floating_detail_favorite.setImageResource(R.drawable.ic_favorite_border_24dp)
+                    false
+                } else {
+                    Snackbar.make(v, getString(R.string.detail_snackbar_added_favorite), Snackbar.LENGTH_SHORT).show()
+                    floating_detail_favorite.setImageResource(R.drawable.ic_favorite_24dp)
+                    true
+                }
+            }
+        }
     }
 }

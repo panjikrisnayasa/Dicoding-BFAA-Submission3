@@ -1,0 +1,8 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="daily_reminder"
+        android:summary="Reminder to open the app every 09.00 AM"
+        android:title="Daily Reminder" />
+
+</PreferenceScreen>

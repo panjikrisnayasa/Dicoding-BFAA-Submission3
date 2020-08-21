@@ -1,22 +1,22 @@
 package com.panjikrisnayasa.submission3.view
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.panjikrisnayasa.submission3.R
 
-class NotificationsActivity : AppCompatActivity() {
+class FavoriteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notifications)
+        setContentView(R.layout.activity_favorite)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.notifications_text_title)
-
-        supportFragmentManager.beginTransaction()
-            .replace(android.R.id.content, NotificationsFragment())
-            .commit()
+        supportActionBar?.title = getString(R.string.favorite_text_title)
+        invalidateOptionsMenu()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
