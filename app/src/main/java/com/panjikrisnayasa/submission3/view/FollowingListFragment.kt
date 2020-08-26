@@ -82,13 +82,11 @@ class FollowingListFragment : Fragment() {
         )
 
         val extraUsername = arguments?.getString(DetailActivity.EXTRA_USERNAME)
-        Log.d(MainActivity.TAG, "extraUsername = $extraUsername")
         if (extraUsername != null) {
             mViewModel.setFollowing(extraUsername)
             mViewModel.getFollowing()
                 .observe(this.viewLifecycleOwner, Observer { following ->
                     showLoading(false)
-                    Log.d(MainActivity.TAG, "followers.size = ${following.size}")
                     if (following != null) {
                         mUserSearchAdapter.setUserSearchData(following)
                     } else

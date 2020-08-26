@@ -23,4 +23,8 @@
 
     <string name="notifications_text_title">Notifications</string>
 
+    <string name="preference_key_daily_reminder">daily_reminder</string>
+    <string name="preference_summary_daily_reminder">Reminder to open the app every 09.00 AM</string>
+    <string name="preference_title_daily_reminder">Daily Reminder</string>
+
 </resources>

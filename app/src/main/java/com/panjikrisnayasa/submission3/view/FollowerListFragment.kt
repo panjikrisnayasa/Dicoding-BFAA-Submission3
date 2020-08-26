@@ -82,12 +82,10 @@ class FollowerListFragment : Fragment() {
         )
 
         val extraUsername = arguments?.getString(DetailActivity.EXTRA_USERNAME)
-        Log.d(MainActivity.TAG, "extraUsername = $extraUsername")
         if (extraUsername != null) {
             mViewModel.setFollowers(extraUsername)
             mViewModel.getFollowers().observe(this.viewLifecycleOwner, Observer { followers ->
                 showLoading(false)
-                Log.d(MainActivity.TAG, "followers.size = ${followers.size}")
                 if (followers != null) {
                     mUserSearchAdapter.setUserSearchData(followers)
                 } else

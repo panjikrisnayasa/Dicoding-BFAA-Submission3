@@ -24,4 +24,8 @@
 
     <string name="notifications_text_title">Notifikasi</string>
 
+    <string name="preference_key_daily_reminder">daily_reminder</string>
+    <string name="preference_summary_daily_reminder">Pengingat untuk membuka aplikasi setiap pukul 09.00</string>
+    <string name="preference_title_daily_reminder">Pengingat Harian</string>
+
 </resources>

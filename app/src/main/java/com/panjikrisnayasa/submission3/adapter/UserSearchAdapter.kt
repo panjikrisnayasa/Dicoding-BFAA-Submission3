@@ -4,13 +4,12 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.panjikrisnayasa.submission3.R
 import com.panjikrisnayasa.submission3.model.User
 import com.panjikrisnayasa.submission3.view.DetailActivity
-import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.item_user_search.view.*
 
 class UserSearchAdapter : RecyclerView.Adapter<UserSearchAdapter.UserSearchViewHolder>() {
 
@@ -27,18 +26,7 @@ class UserSearchAdapter : RecyclerView.Adapter<UserSearchAdapter.UserSearchViewH
     }
 
     override fun onBindViewHolder(holder: UserSearchViewHolder, position: Int) {
-        val user = mUserSearchData[position]
-
-        Glide.with(holder.itemView.context)
-            .load(user.avatarUrl)
-            .into(holder.imageAvatar)
-        holder.textUsername.text = user.username
-
-        holder.itemView.setOnClickListener {
-            val intentDetail = Intent(holder.itemView.context, DetailActivity::class.java)
-            intentDetail.putExtra(DetailActivity.EXTRA_USERNAME, user.username)
-            holder.itemView.context.startActivity(intentDetail)
-        }
+        holder.bind(mUserSearchData[position])
     }
 
     fun setUserSearchData(users: ArrayList<User>) {
@@ -47,9 +35,20 @@ class UserSearchAdapter : RecyclerView.Adapter<UserSearchAdapter.UserSearchViewH
         notifyDataSetChanged()
     }
 
-    inner class UserSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imageAvatar: CircleImageView =
-            itemView.findViewById(R.id.circle_image_item_user_search_avatar)
-        var textUsername: TextView = itemView.findViewById(R.id.text_item_user_search_username)
+    class UserSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(user: User) {
+            with(itemView) {
+                Glide.with(context)
+                    .load(user.avatarUrl)
+                    .into(circle_image_item_user_search_avatar)
+                text_item_user_search_username.text = user.username
+
+                this.setOnClickListener {
+                    val intentDetail = Intent(context, DetailActivity::class.java)
+                    intentDetail.putExtra(DetailActivity.EXTRA_USERNAME, user.username)
+                    context.startActivity(intentDetail)
+                }
+            }
+        }
     }
 }

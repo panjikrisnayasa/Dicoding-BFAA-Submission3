@@ -16,11 +16,11 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_user" />
 
-    <ProgressBar
-        android:id="@+id/progress_favorite_loading"
-        style="?android:attr/progressBarStyle"
+    <TextView
+        android:id="@+id/text_favorite_no_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/follower_list_text_no_data"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
