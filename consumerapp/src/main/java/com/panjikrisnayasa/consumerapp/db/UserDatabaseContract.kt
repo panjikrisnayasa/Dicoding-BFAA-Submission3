@@ -1,4 +1,4 @@
-package com.panjikrisnayasa.submission3.db
+package com.panjikrisnayasa.consumerapp.db
 
 import android.net.Uri
 import android.provider.BaseColumns

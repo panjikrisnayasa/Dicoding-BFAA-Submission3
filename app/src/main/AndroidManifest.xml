@@ -5,6 +5,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <permission
+        android:name="com.panjikrisnayasa.submission3.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.panjikrisnayasa.submission3.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -15,6 +22,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+
+        <provider
+            android:name=".provider.UserProvider"
+            android:authorities="com.panjikrisnayasa.submission3.user"
+            android:exported="true"
+            android:readPermission="com.panjikrisnayasa.submission3.READ_DATABASE"
+            android:writePermission="com.panjikrisnayasa.submission3.WRITE_DATABASE" />
+
         <activity android:name=".view.FavoriteActivity" />
         <activity android:name=".view.NotificationsActivity" />
         <activity android:name=".view.DetailActivity" />

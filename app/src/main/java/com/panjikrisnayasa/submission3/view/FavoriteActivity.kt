@@ -11,7 +11,6 @@ import com.panjikrisnayasa.submission3.R
 import com.panjikrisnayasa.submission3.adapter.UsersAdapter
 import com.panjikrisnayasa.submission3.db.UserHelper
 import com.panjikrisnayasa.submission3.helper.MappingHelper
-import com.panjikrisnayasa.submission3.model.User
 import kotlinx.android.synthetic.main.activity_favorite.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

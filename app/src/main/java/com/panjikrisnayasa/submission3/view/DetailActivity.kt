@@ -2,6 +2,7 @@ package com.panjikrisnayasa.submission3.view
 
 import android.content.ContentValues
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -14,6 +15,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.panjikrisnayasa.submission3.R
 import com.panjikrisnayasa.submission3.adapter.FollowerFollowingAdapter
 import com.panjikrisnayasa.submission3.db.UserDatabaseContract
+import com.panjikrisnayasa.submission3.db.UserDatabaseContract.UserColumns.Companion.CONTENT_URI_USER
 import com.panjikrisnayasa.submission3.db.UserHelper
 import com.panjikrisnayasa.submission3.helper.MappingHelper
 import com.panjikrisnayasa.submission3.model.User
@@ -38,6 +40,7 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var mViewModel: DetailViewModel
     private lateinit var mUserHelper: UserHelper
     private lateinit var mUser: User
+    private lateinit var mUriWithUsername: Uri
     private var mIsFavored = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -87,6 +90,7 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
                 val intent = Intent()
                 mIsFavored = if (mIsFavored) {
                     mUserHelper.deleteByUsername(mUser.username)
+                    contentResolver.delete(mUriWithUsername, null, null)
                     Snackbar.make(
                         v,
                         getString(R.string.detail_snackbar_deleted_favorite),
@@ -101,7 +105,9 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
                     val values = ContentValues()
                     values.put(UserDatabaseContract.UserColumns.USERNAME, mUser.username)
                     values.put(UserDatabaseContract.UserColumns.AVATAR, mUser.avatar)
+                    Log.d(MainActivity.TAG, "mUser.avatar = ${mUser.avatar}")
                     values.put(UserDatabaseContract.UserColumns.AVATAR_URL, mUser.avatarUrl)
+                    Log.d(MainActivity.TAG, "mUser.avatarUrl = ${mUser.avatarUrl}")
                     values.put(UserDatabaseContract.UserColumns.NAME, mUser.name)
                     values.put(
                         UserDatabaseContract.UserColumns.REPOSITORY_COUNT,
@@ -114,7 +120,7 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
                     )
                     values.put(UserDatabaseContract.UserColumns.COMPANY, mUser.company)
                     values.put(UserDatabaseContract.UserColumns.LOCATION, mUser.location)
-                    mUserHelper.insert(values)
+                    contentResolver.insert(CONTENT_URI_USER, values)
 
                     Snackbar.make(
                         v,
@@ -146,6 +152,8 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
     private fun showUserDetail(user: User) {
         showLoading(false)
         supportActionBar?.title = user.name
+
+        mUriWithUsername = Uri.parse(CONTENT_URI_USER.toString() + "/" + user.username)
 
         mUser = user
         checkUser(user.username)
