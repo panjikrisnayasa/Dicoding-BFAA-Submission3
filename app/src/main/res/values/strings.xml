@@ -27,4 +27,6 @@
     <string name="preference_summary_daily_reminder">Reminder to open the app every 09.00 AM</string>
     <string name="preference_title_daily_reminder">Daily Reminder</string>
 
+    <string name="alarm_daily_reminder_message">We\'re missing you!</string>
+
 </resources>

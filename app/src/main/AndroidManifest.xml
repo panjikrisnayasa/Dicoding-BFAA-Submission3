@@ -4,6 +4,8 @@
     package="com.panjikrisnayasa.submission3">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <permission
         android:name="com.panjikrisnayasa.submission3.READ_DATABASE"
@@ -29,6 +31,12 @@
             android:exported="true"
             android:readPermission="com.panjikrisnayasa.submission3.READ_DATABASE"
             android:writePermission="com.panjikrisnayasa.submission3.WRITE_DATABASE" />
+
+        <receiver
+            android:name=".util.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedReceiver" />
 
         <activity android:name=".view.FavoriteActivity" />
         <activity android:name=".view.NotificationsActivity" />

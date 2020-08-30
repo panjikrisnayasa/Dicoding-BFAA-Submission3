@@ -1,6 +1,7 @@
 package com.panjikrisnayasa.submission3.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.panjikrisnayasa.submission3.R
