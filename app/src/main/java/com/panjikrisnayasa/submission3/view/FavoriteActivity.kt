@@ -37,11 +37,6 @@ class FavoriteActivity : AppCompatActivity() {
         loadFavoriteUserAsync()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mUserHelper.close()
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home ->

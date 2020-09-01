@@ -7,4 +7,7 @@
     <string name="item_user_text_repository">Repository</string>
     <string name="main_text_no_data">No data</string>
 
+    <string name="widget_banner">Favorite User</string>
+    <string name="widget_no_data">No data</string>
+
 </resources>
