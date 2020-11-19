@@ -14,8 +14,6 @@
 
     <string name="follower_list_text_no_data">No data</string>
 
-    <string name="detail_text_no_location">No location data</string>
-    <string name="detail_text_no_company">No company data</string>
     <string name="detail_snackbar_deleted_favorite">Deleted from Favorite User</string>
     <string name="detail_snackbar_added_favorite">Added to Favorite User</string>
 

@@ -15,8 +15,6 @@
 
     <string name="follower_list_text_no_data">Tidak ada data</string>
 
-    <string name="detail_text_no_location">Tidak ada data lokasi</string>
-    <string name="detail_text_no_company">Tidak ada data perusahaan</string>
     <string name="detail_snackbar_deleted_favorite">Dihapus dari Pengguna Favorit</string>
     <string name="detail_snackbar_added_favorite">Ditambah ke Pengguna Favorit</string>
 
