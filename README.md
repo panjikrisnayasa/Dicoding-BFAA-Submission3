@@ -1,4 +1,4 @@
-An app that created for "Belajar Fundamental Aplikasi Android" online course from Dicoding Indonesia
+An app that created for the last submission of "Belajar Fundamental Aplikasi Android" online course from Dicoding Indonesia
 
 ![Screenshot_20201122-213353](https://user-images.githubusercontent.com/48062932/99906337-842a7100-2d11-11eb-9fa8-f55c974143d1.jpg)
 
