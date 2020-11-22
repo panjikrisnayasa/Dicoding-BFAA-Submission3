@@ -1,4 +1,8 @@
-An app that created for the last submission of "Belajar Fundamental Aplikasi Android" online course from Dicoding Indonesia
+# Dicoding-BFAA-Submission3
+
+An app that created for the last submission of "Belajar Fundamental Aplikasi Android" online course from Dicoding Indonesia.
+
+This app implements MVVM architecture, CRUD SQLite, alarm manager, content provider, notification, and loopj for retrieving data from API.
 
 ![Screenshot_20201122-213353](https://user-images.githubusercontent.com/48062932/99906337-842a7100-2d11-11eb-9fa8-f55c974143d1.jpg)
 
